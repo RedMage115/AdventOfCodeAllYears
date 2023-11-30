@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "ocVToewfAvMkEFixEHwr0M4vLOj9ZFUvwhKSwdiRLGjd7HiTUStvHTSx4QSlJ2l+r5t0zcm+j7Tvym7BIcIiyA==",
+  "success": true,
+  "projectFilePath": "D:\\AdventOfCode\\AOC2023\\Day1\\FSharp\\AOC2023-Day1\\AOC2023-Day1.fsproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Red\\.nuget\\packages\\fsharp.core\\8.0.100\\fsharp.core.8.0.100.nupkg.sha512"
+  ],
+  "logs": []
+}
