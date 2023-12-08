@@ -5,5 +5,5 @@ bin
 *.exe
 bin/*
 out/*
-obj/*
+./obj/*
 .idea/*
