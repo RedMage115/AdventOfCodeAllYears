@@ -2,8 +2,8 @@
 open System
 open System.IO
 
-let IntroFile = @"D:\AdventOfCode\AOC2023\Day1\Inputs\intro.txt"
-let ActualFile = @"D:\AdventOfCode\AOC2023\Day1\Inputs\actual.txt"
+let IntroFile = @"..\..\..\..\..\Inputs\intro.txt"
+let ActualFile = @"..\..\..\..\..\Inputs\actual.txt"
 
 
 

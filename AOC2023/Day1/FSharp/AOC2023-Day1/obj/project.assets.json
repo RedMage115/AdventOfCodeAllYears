@@ -114,11 +114,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\AdventOfCode\\AOC2023\\Day1\\FSharp\\AOC2023-Day1\\AOC2023-Day1.fsproj",
+      "projectUniqueName": "D:\\AdventOfCodeAllYears\\AOC2023\\Day1\\FSharp\\AOC2023-Day1\\AOC2023-Day1.fsproj",
       "projectName": "AOC2023-Day1",
-      "projectPath": "D:\\AdventOfCode\\AOC2023\\Day1\\FSharp\\AOC2023-Day1\\AOC2023-Day1.fsproj",
+      "projectPath": "D:\\AdventOfCodeAllYears\\AOC2023\\Day1\\FSharp\\AOC2023-Day1\\AOC2023-Day1.fsproj",
       "packagesPath": "C:\\Users\\Red\\.nuget\\packages\\",
-      "outputPath": "D:\\AdventOfCode\\AOC2023\\Day1\\FSharp\\AOC2023-Day1\\obj\\",
+      "outputPath": "D:\\AdventOfCodeAllYears\\AOC2023\\Day1\\FSharp\\AOC2023-Day1\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
