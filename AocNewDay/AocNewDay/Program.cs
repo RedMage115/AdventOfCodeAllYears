@@ -108,6 +108,7 @@ if (Directory.GetFiles(csFolder).Length < 1) {
 
 if (Directory.GetFiles(jsFolder).Length < 1) {
     var inputLines = new List<string>() {
+        """const fs = require('fs');""",
         $"""const IntroFile = String.raw`{Path.Combine(aocRoot, $"AOC{year}", $"Day{day}", "Inputs", "intro.txt")}`;""",
         $"""const ActualFile = String.raw`{Path.Combine(aocRoot, $"AOC{year}", $"Day{day}", "Inputs", "actual.txt")}`;"""
     };
