@@ -8,8 +8,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Extension.Mathematics" Version="1.2.12" />
-  </ItemGroup>
-
 </Project>
