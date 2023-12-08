@@ -121,17 +121,10 @@ if (Directory.GetFiles(jsFolder).Length < 1) {
     Console.WriteLine("Adding input file constants");
 }
 
-if (Directory.GetFiles(jsFolder).Length < 1) {
-    var inputLines = new List<string>() {
-        """const fs = require('fs');""",
-        $"""const IntroFile = String.raw`{Path.Combine(aocRoot, $"AOC{year}", $"Day{day}", "Inputs", "intro.txt")}`;""",
-        $"""const ActualFile = String.raw`{Path.Combine(aocRoot, $"AOC{year}", $"Day{day}", "Inputs", "actual.txt")}`;"""
-    };
-    File.AppendAllLines(Path.Combine(jsFolder,"main.js"), inputLines);
-    Console.WriteLine("Created .js file");
-    Console.WriteLine("Creating .gitignores");
-    File.WriteAllLines(Path.Combine(jsFolder, ".gitignore"), gitIgnoreLines);
-    Console.WriteLine("Adding input file constants");
+if (Directory.GetFiles(ktFolder).Length < 1) {
+    Console.WriteLine("Creating kotlin .gitignores");
+    Directory.CreateDirectory(Path.Combine(ktFolder, "src"));
+    File.WriteAllLines(Path.Combine(ktFolder, "src", ".gitignore"), gitIgnoreLines);
 }
 
 Console.WriteLine("Done!");

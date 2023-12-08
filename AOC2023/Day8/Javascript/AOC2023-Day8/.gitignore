@@ -7,3 +7,4 @@ bin/*
 out/*
 obj/*
 .idea/*
+.out/*
