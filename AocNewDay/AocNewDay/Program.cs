@@ -47,6 +47,7 @@ Console.WriteLine("Creating .sln files...");
 
 var csFolder = Path.Combine(aocRoot, $"AOC{year}", $"Day{day}", "CSharp", $"AOC{year}-Day{day}");
 var fsFolder = Path.Combine(aocRoot, $"AOC{year}", $"Day{day}", "FSharp", $"AOC{year}-Day{day}");
+var jsFolder = Path.Combine(aocRoot, $"AOC{year}", $"Day{day}", "JavaScript", $"AOC{year}-Day{day}");
 var gitIgnoreLines = new List<string>() {
     ".idea",
     "out",
@@ -105,10 +106,17 @@ if (Directory.GetFiles(csFolder).Length < 1) {
 }
 
 
-
-
-
-
+if (Directory.GetFiles(jsFolder).Length < 1) {
+    var inputLines = new List<string>() {
+        $"""const IntroFile = String.raw`{Path.Combine(aocRoot, $"AOC{year}", $"Day{day}", "Inputs", "intro.txt")}`;""",
+        $"""const ActualFile = String.raw`{Path.Combine(aocRoot, $"AOC{year}", $"Day{day}", "Inputs", "actual.txt")}`;"""
+    };
+    File.AppendAllLines(Path.Combine(jsFolder,"main.js"), inputLines);
+    Console.WriteLine("Created .js file");
+    Console.WriteLine("Creating .gitignores");
+    File.WriteAllLines(Path.Combine(jsFolder, ".gitignore"), gitIgnoreLines);
+    Console.WriteLine("Adding input file constants");
+}
 
 Console.WriteLine("Done!");
 Console.ReadLine();
