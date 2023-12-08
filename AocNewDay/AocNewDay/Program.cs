@@ -20,7 +20,7 @@ var langs = new List<string> {
     "FSharp",
     "Rust",
     "Javascript",
-    "Java",
+    "Kotlin",
     "Python",
 };
 
@@ -48,6 +48,7 @@ Console.WriteLine("Creating .sln files...");
 var csFolder = Path.Combine(aocRoot, $"AOC{year}", $"Day{day}", "CSharp", $"AOC{year}-Day{day}");
 var fsFolder = Path.Combine(aocRoot, $"AOC{year}", $"Day{day}", "FSharp", $"AOC{year}-Day{day}");
 var jsFolder = Path.Combine(aocRoot, $"AOC{year}", $"Day{day}", "JavaScript", $"AOC{year}-Day{day}");
+var ktFolder = Path.Combine(aocRoot, $"AOC{year}", $"Day{day}", "Kotlin", $"AOC{year}-Day{day}");
 var gitIgnoreLines = new List<string>() {
     ".idea",
     "out",
@@ -58,6 +59,7 @@ var gitIgnoreLines = new List<string>() {
     "out/*",
     "obj/*",
     ".idea/*",
+    ".out/*",
 };
 if (Directory.GetFiles(fsFolder).Length < 1) {
     var psi = new ProcessStartInfo() {
@@ -105,6 +107,19 @@ if (Directory.GetFiles(csFolder).Length < 1) {
 
 }
 
+
+if (Directory.GetFiles(jsFolder).Length < 1) {
+    var inputLines = new List<string>() {
+        """const fs = require('fs');""",
+        $"""const IntroFile = String.raw`{Path.Combine(aocRoot, $"AOC{year}", $"Day{day}", "Inputs", "intro.txt")}`;""",
+        $"""const ActualFile = String.raw`{Path.Combine(aocRoot, $"AOC{year}", $"Day{day}", "Inputs", "actual.txt")}`;"""
+    };
+    File.AppendAllLines(Path.Combine(jsFolder,"main.js"), inputLines);
+    Console.WriteLine("Created .js file");
+    Console.WriteLine("Creating .gitignores");
+    File.WriteAllLines(Path.Combine(jsFolder, ".gitignore"), gitIgnoreLines);
+    Console.WriteLine("Adding input file constants");
+}
 
 if (Directory.GetFiles(jsFolder).Length < 1) {
     var inputLines = new List<string>() {
