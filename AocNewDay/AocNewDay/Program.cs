@@ -123,8 +123,7 @@ if (Directory.GetFiles(jsFolder).Length < 1) {
 
 if (Directory.GetFiles(ktFolder).Length < 1) {
     Console.WriteLine("Creating kotlin .gitignores");
-    Directory.CreateDirectory(Path.Combine(ktFolder, "src"));
-    File.WriteAllLines(Path.Combine(ktFolder, "src", ".gitignore"), gitIgnoreLines);
+    File.WriteAllLines(Path.Combine(ktFolder, ".gitignore"), gitIgnoreLines);
 }
 
 Console.WriteLine("Done!");
