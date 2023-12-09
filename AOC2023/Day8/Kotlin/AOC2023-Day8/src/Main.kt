@@ -122,7 +122,7 @@ fun main() {
 
     println("Intro: ${partOne(introFile)}")
     println("Part One: ${partOne(actualFile)}")
-    println("Part One: ${partTwo(actualFile)}")
+    println("Part Two: ${partTwo(actualFile)}")
 }
 
 
