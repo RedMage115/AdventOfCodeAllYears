@@ -22,6 +22,7 @@ var langs = new List<string> {
     "Javascript",
     "Kotlin",
     "Python",
+    "Swift",
 };
 
 foreach (var dir in langs.Select(lang =>
@@ -49,6 +50,7 @@ var csFolder = Path.Combine(aocRoot, $"AOC{year}", $"Day{day}", "CSharp", $"AOC{
 var fsFolder = Path.Combine(aocRoot, $"AOC{year}", $"Day{day}", "FSharp", $"AOC{year}-Day{day}");
 var jsFolder = Path.Combine(aocRoot, $"AOC{year}", $"Day{day}", "JavaScript", $"AOC{year}-Day{day}");
 var ktFolder = Path.Combine(aocRoot, $"AOC{year}", $"Day{day}", "Kotlin", $"AOC{year}-Day{day}");
+var swiftFolder = Path.Combine(aocRoot, $"AOC{year}", $"Day{day}", "Swift", $"AOC{year}-Day{day}");
 var gitIgnoreLines = new List<string>() {
     ".idea",
     "out",
@@ -104,6 +106,30 @@ if (Directory.GetFiles(csFolder).Length < 1) {
         $"""const string ActualFile = @"{Path.Combine(aocRoot, $"AOC{year}", $"Day{day}", "Inputs", "actual.txt")}";"""
     };
     File.AppendAllLines(Path.Combine(csFolder,"Program.cs"), inputLines);
+
+}
+
+if (Directory.GetFiles(swiftFolder).Length < 1) {
+    var psi = new ProcessStartInfo() {
+        FileName = "swift",
+        WorkingDirectory = swiftFolder,
+        RedirectStandardOutput = true,
+        RedirectStandardError = true,
+        CreateNoWindow = true,
+        UseShellExecute = false,
+        Arguments = $"""package init --name AOC{year} --type executable"""
+    };
+    var process = Process.Start(psi);
+    process?.WaitForExit();
+    Console.WriteLine("Created Swift sln");
+    Console.WriteLine("Creating .gitignores");
+    File.WriteAllLines(Path.Combine(swiftFolder, ".gitignore"), gitIgnoreLines);
+    Console.WriteLine("Adding input file constants");
+    var inputLines = new List<string>() {
+        $"""var IntroFile = "{Path.Combine(aocRoot, $"AOC{year}", $"Day{day}", "Inputs", "intro.txt")}""",
+        $"""var ActualFile = "{Path.Combine(aocRoot, $"AOC{year}", $"Day{day}", "Inputs", "actual.txt")}"""
+    };
+    File.AppendAllLines(Path.Combine(swiftFolder,"Sources","main.swift"), inputLines);
 
 }
 

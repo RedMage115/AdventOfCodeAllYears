@@ -1,0 +1,10 @@
+.idea
+out
+obj
+bin
+*.exe
+bin/*
+out/*
+obj/*
+.idea/*
+.out/*
